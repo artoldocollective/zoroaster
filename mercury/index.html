@@ -1,0 +1,769 @@
+<html>
+  <head>
+    <title>Freddie Mercury (Queen) - Zoroaster Superstar: In Zarathustra we trust - ARTOLDO</title><meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="author" content="ARTOLDO - Sara Ferro & Chris Weil">
+    <meta property="og:image" content="./images/clavisartis.png" />
+    <link rel="icon" type="image/png" href="./images/clavisartis.png" />
+    <script src="assets/engine.js"></script>
+    <script src="assets/extras.js"></script>
+    <script src="assets/sound.js"></script>
+    <script src="assets/audio.js"></script>
+    <script src="assets/random.js"></script>
+    <script src="assets/rain.js"></script>
+    <script src="assets/loader1.js"></script>
+    <script src="assets/loader2.js"></script>
+
+    <style>
+      .a-dialog-allow-button {
+       background-color: white;
+	}
+
+      .a-dialog-deny-button {
+       background-color: white;
+        }
+
+      .a-dialog-ok-button {
+       background-color: white;
+        }
+
+      .logo {
+        z-index: 101;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0.5em;
+        background: transparent;
+        height:100px;
+      }
+
+      #center {
+	bottom: 0px;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        z-index: 99;
+ 
+        }
+  
+      .overlay {
+        z-index: 100;
+        width:100%;
+        position: absolute;
+        top: 20px;
+        background: transparent;
+        }
+
+      .text {
+        margin: auto;
+  	width: 50%;
+        padding: 0.5em;
+        font-family: arial;
+        font-size: large;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        }
+
+      	a:link {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: underline;
+	}
+
+	a:visited {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+	a:hover {
+  	color: yellow;
+  	background-color: transparent;
+  	text-decoration: overline;
+	}
+
+	a:active {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+
+       @media only screen and (max-width: 760px) {
+
+        .text {
+		font-size:small;
+        }
+
+        .logo {
+		height:70px; left:5px; top: 30px;
+        }
+
+        .carpet {
+		width:60%
+        }
+        
+        
+      }
+
+
+      @media only screen and (max-width: 1200px) {
+
+        .text {
+		font-size:normal;
+        }
+
+        .carpet {
+		width:70%
+        }
+            
+      }
+
+      .no-js #loader { display: none;  }
+      .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+      .se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(./images/spinner.svg) center no-repeat #000;
+     }
+  
+    </style>
+  </head>
+
+<script>
+// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
+
+<body bg-color="black">
+
+<div class="se-pre-con"></div>
+
+<image src="images/clavisartis.png" class="logo"/>
+
+<div id="center">
+<image src="images/carpet.png" class="carpet"/>
+</div>
+
+<div class="overlay">
+<div class="text"><span><a href="../bowie/">David Bowie</a></span> <span style="color: white;">(Ziggy Stardust) </span><span><a href="../mercury/">Freddie Mercury</a></span> <span style="color: white;">(Queen) </span><span><a href="../casanova/">Casanova</a></span> <span style="color: white;">(Fellini + Rota)</span></div>
+</div>
+
+<a-scene rain="width: 100; count: 10000;" loading-screen="dotsColor: cyan; backgroundColor: black" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" antialias="true" cursor="rayOrigin: mouse">
+
+
+<!-- World -->
+
+<a-sky src="images/sky.jpg" ></a-sky>
+
+<a-cylinder material="src:images/cylinder.jpg; side: double;" open-ended="true" scale="80 50 80" opacity="0.6;" position="0 14 0" rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 20000"></a-cylinder>
+
+<a-cylinder material="src:images/money.jpg; side: double;" open-ended="true" scale="80 50 80" opacity="0.3;" position="0 12 0" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000"></a-cylinder>
+
+
+<!-- Sound -->
+
+    <audio id="music" src="assets/music.mp3" crossorigin="anonymous"></audio>
+		
+	
+<!-- Camera -->
+
+<a-entity id="rig" position="0 20 10" look-controls="pointerLockEnabled:true;" animation="property: position; to: 0 10 10; easing: linear; dur: 10000">
+	<a-entity id="camera" camera position="0 1.6 0" cursor-visible="true">
+
+	</a-entity>
+</a-entity>
+
+
+<!-- Cubes -->
+
+<a-entity position="0 80 10" animation="property: position; to: 0 -10 10; loop: true; dir:alternate; easing: linear; dur: 30000">
+
+<a-entity id="box1" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (1).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box2" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (2).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box3" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (3).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box4" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (4).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box5" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (5).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box6" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (6).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box7" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (7).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box8" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (8).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box9" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (9).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box10" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (10).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box11" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (11).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box12" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (12).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box13" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (13).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box14" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (14).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box15" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (15).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box16" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (16).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box17" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (17).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box18" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (18).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box19" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (19).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box20" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (20).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box21" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (21).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box22" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (22).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box23" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (23).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box24" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (24).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box25" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (25).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box26" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (26).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box27" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (27).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box28" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (28).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box29" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (29).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box30" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (30).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box31" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (31).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box32" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (32).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box33" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (33).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box34" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (34).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box35" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (35).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box36" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (36).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box37" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (37).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box38" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (38).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box39" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (39).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box40" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (40).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box41" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (41).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box42" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (42).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box43" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (43).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box44" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (44).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box45" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (45).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box46" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (46).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box47" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (47).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box48" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (48).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box49" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (49).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box50" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (50).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box51" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (51).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box52" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (52).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box53" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (53).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box54" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (54).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box55" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (55).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box56" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (56).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box57" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (57).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box58" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (58).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box59" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (59).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box60" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (60).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box61" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (61).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box62" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (62).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box63" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (63).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box64" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (64).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box65" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (65).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box66" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (66).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box67" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (67).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box68" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (68).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box69" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (69).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box70" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (70).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box71" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (71).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box72" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (72).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box73" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (73).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box74" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (74).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box75" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (75).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box76" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (76).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box77" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (77).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box78" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (78).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box79" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (79).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box80" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (80).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box81" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (81).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box82" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (82).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box83" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (83).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box84" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (84).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box85" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (85).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box86" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (86).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box87" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (87).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box88" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (88).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box89" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (89).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box90" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (90).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box91" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (91).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box92" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (92).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box93" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (93).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box94" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (94).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box95" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (95).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box96" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (96).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box97" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (97).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box98" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (98).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box99" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (99).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box100" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (100).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box101" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (101).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box102" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (102).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box103" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (103).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box104" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (104).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box105" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (105).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box106" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (106).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box107" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (107).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box108" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (108).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box109" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (109).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box110" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (110).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box111" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (111).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box112" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"  geometry="" material="src:url(images/m (112).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box113" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (113).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box114" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (114).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box115" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (115).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box116" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (116).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box117" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (117).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box118" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (118).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box119" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (119).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box120" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (120).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box121" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (121).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box122" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (122).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box123" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (123).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box124" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"    geometry="" material="src:url(images/m (124).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box125" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (125).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box126" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (126).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box127" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (127).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box128" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (128).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box129" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (129).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box130" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (130).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box131" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (131).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box132" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (132).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box133" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (133).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box134" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (134).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box135" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (135).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box136" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (136).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box137" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (137).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box138" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (138).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box139" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (139).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box140" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (140).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box141" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (141).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box142" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (142).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box143" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (143).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box144" static-body randomize="position:30 0 50..-30 5 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (144).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box145" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (145).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box146" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (146).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box147" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (147).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box148" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (148).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box149" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (149).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box150" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (150).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box151" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (151).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box152" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (152).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box153" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (153).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box154" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (154).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box155" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (155).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box156" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (156).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box157" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (157).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box158" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (158).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box159" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (159).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box160" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (160).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box161" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (161).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box162" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (162).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box163" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (163).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box164" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (164).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box165" static-body randomize="position:30 0 50..-30 15 -50" scale="2 2 2" rotation="0 0 0"   geometry="" material="src:url(images/m (165).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+</a-entity>
+
+
+<!-- Object -->
+
+<a-box static-body position="-10 5 -15" src="images/m (135).jpg" material="transparent: true; opacity: 0.7;" scale="5 5 5"  rotation="0 0 0" animation="property: rotation; to: -360 -360 -360; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box static-body position="10 5 -15" src="images/innuendo.jpg" material="transparent: true; opacity: 0.7;" scale="5 5 5"  rotation="0 0 0" animation="property: rotation; to: 360 360 360; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box static-body position="20 5 -12" src="images/bohemian.jpg" material="transparent: true; opacity: 0.7;" scale="4 4 4"  rotation="0 0 0" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box static-body position="-20 5 -12" src="images/dragon.jpg" material="transparent: true; opacity: 0.7;" scale="4 4 4"  rotation="0 0 0" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="6 6 13" src="images/fire.png" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="-6 6 13" src="images/fire.png" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="10 6 20" src="images/fire2.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="-10 6 20" src="images/fire2.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="14 6 30" src="images/fire1.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="-14 6 30" src="images/fire1.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="12 6 40" src="images/fire3.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-box position="-12 6 40" src="images/fire3.jpg" material="transparent: true; opacity: 0.7;" scale="3.5 3.5 3.5"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-circle material="src:url(images/mercury.jpg);" radius="5" rotation="-90 0 0" position="0 2 -10" animation="property: rotation; to: -90 0 -360; loop: true; easing: linear; dur: 10000"></a-circle>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000">
+<a-sphere color="red" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-2 8 2" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000">
+<a-sphere color="green" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-4 10 4" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 30000">
+<a-sphere color="yellow" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-6 12 6" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 10000">
+<a-sphere color="blu" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-8 8 8" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 20000">
+<a-sphere color="pink" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-10 10 10" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 30000">
+<a-sphere color="orange" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-12 12 12" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 40000">
+<a-sphere color="cyan" src="images/sand.jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-3 14 3" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-box position="0 10 -30" src="images/queen.png" material="transparent: true; opacity: 0.7;" scale="10 10 10"  rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"></a-box>
+
+<a-entity position="0 5 60" animation="property: position; to: 0 5 25; loop: true; dir: alternate; easing: linear; dur: 10000">
+<a-image src="images/mazda.png" material="transparent: true; position="0 0 0" scale="10 10 10" rotation="0 180 0"> 
+</a-image>
+</a-entity>
+
+<a-entity position="0 15 60" animation="property: position; to: 0 15 25; loop: true; dir: alternate; easing: linear; dur: 10000">
+<a-image src="images/zoroastro.png" material="transparent: true; position="0 0 0" scale="5 5 5" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000"> 
+</a-image>
+</a-entity>
+
+
+
+
+<!-- Floor -->
+<a-plane static-body id="floor" color="#463f37" material="src:url(images/terra.jpg); repeat:50 50;" width="1000" height="1000" rotation="-90 0 0" position="0 0 0"></a-plane>
+<a-box color="black" scale="200 20 200" position="0 -12 0" audio="src: #music; loop: true;"></a-box>
+
+
+</a-scene>
+             
+
+  </body>
+</html>

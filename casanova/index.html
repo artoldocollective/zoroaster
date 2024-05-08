@@ -1,0 +1,377 @@
+<html>
+  <head>
+    <title>Casanova (Fellini + Rota) - Zoroaster Superstar: In Zarathustra we trust - ARTOLDO</title><meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="author" content="ARTOLDO - Sara Ferro & Chris Weil">
+    <meta property="og:image" content="./images/clavisartis.png" />
+    <link rel="icon" type="image/png" href="./images/clavisartis.png" />
+    <script src="assets/engine.js"></script>
+    <script src="assets/extras.js"></script>
+    <script src="assets/sound.js"></script>
+    <script src="assets/audio.js"></script>
+    <script src="assets/random.js"></script>
+    <script src="assets/rain.js"></script>
+    <script src="assets/loader1.js"></script>
+    <script src="assets/loader2.js"></script>
+
+    <style>
+      .a-dialog-allow-button {
+       background-color: white;
+	}
+
+      .a-dialog-deny-button {
+       background-color: white;
+        }
+
+      .a-dialog-ok-button {
+       background-color: white;
+        }
+
+      .logo {
+        z-index: 101;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0.5em;
+        background: transparent;
+        height:100px;
+      }
+
+      #center {
+	bottom: 0px;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        z-index: 99;
+ 
+        }
+  
+      .overlay {
+        z-index: 100;
+        width:100%;
+        position: absolute;
+        top: 20px;
+        background: transparent;
+        }
+
+      .text {
+        margin: auto;
+  	width: 50%;
+        padding: 0.5em;
+        font-family: arial;
+        font-size: large;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        }
+
+      	a:link {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: underline;
+	}
+
+	a:visited {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+	a:hover {
+  	color: yellow;
+  	background-color: transparent;
+  	text-decoration: overline;
+	}
+
+	a:active {
+  	color: cyan;
+  	background-color: transparent;
+  	text-decoration: none;
+	}
+
+
+       @media only screen and (max-width: 760px) {
+
+        .text {
+		font-size:small;
+        }
+
+        .logo {
+		height:70px; left:5px; top: 30px;
+        }
+
+        .gondola {
+		width:60%
+        }
+        
+        
+      }
+
+
+      @media only screen and (max-width: 1200px) {
+
+        .text {
+		font-size:normal;
+        }
+
+        .gondola {
+		width:70%
+        }
+            
+      }
+
+      @media only screen and (max-width: 1800px) {
+
+        .text {
+		font-size:normal;
+        }
+
+        .gondola {
+		width:60%
+        }
+            
+      }
+
+      .no-js #loader { display: none;  }
+      .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+      .se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(./images/spinner.svg) center no-repeat #000;
+     }
+  
+    </style>
+  </head>
+
+<script>
+// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
+
+<body bg-color="black">
+
+<div class="se-pre-con"></div>
+
+<image src="images/clavisartis.png" class="logo"/>
+
+<div id="center">
+<image src="images/gondola3.png" class="gondola"/>
+</div>
+
+<div class="overlay">
+<div class="text"><span><a href="../bowie/">David Bowie</a></span> <span style="color: white;">(Ziggy Stardust) </span><span><a href="../mercury/">Freddie Mercury</a></span> <span style="color: white;">(Queen) </span><span><a href="../casanova/">Casanova</a></span> <span style="color: white;">(Fellini + Rota)</span></div>
+</div>
+
+<a-scene loading-screen="dotsColor: cyan; backgroundColor: black" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" antialias="true" cursor="rayOrigin: mouse">
+
+<!-- World -->
+
+<a-sky src="images/venice.jpg" ></a-sky>
+
+<a-ocean color="marine" width="5000" depth="5000" opacity="0.5" density="50" speed="10" position="0 3 0"></a-ocean>
+
+<!-- Sound -->
+
+    <audio id="music" src="assets/music.mp3"     crossorigin="anonymous"></audio>
+		
+	
+<!-- Camera -->
+
+<a-entity id="rig" position="0 10 10" look-controls="pointerLockEnabled:true;" animation="property: position; to: 0 2 10;  easing: linear; dur: 5000">
+	<a-entity id="camera" camera position="0 2 0" cursor-visible="true">
+		
+		
+	</a-entity>
+</a-entity>
+
+
+<!-- Cubes -->
+
+
+<a-entity id="box1" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (1).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box2" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (2).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box3" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (3).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box4" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (4).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box5" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (5).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box6" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (6).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box7" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (7).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box8" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (8).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box9" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (9).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box10" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (10).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box11" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (11).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box12" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (12).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box13" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (13).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box14" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (14).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box15" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (15).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box16" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (16).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box17" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (17).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box18" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (18).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box19" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (19).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box20" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (20).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box21" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (21).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box22" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (22).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box23" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (23).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box24" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"    geometry="" material="src:url(images/c (24).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box25" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (25).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box26" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (26).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box27" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (27).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box28" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (28).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box29" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (29).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box30" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (30).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box31" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (31).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box32" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (32).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box33" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"  geometry="" material="src:url(images/c (33).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box34" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (34).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box35" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (35).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box36" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (36).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box37" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (37).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>     
+
+<a-entity id="box38" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"    geometry="" material="src:url(images/c (38).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box39" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (39).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box40" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (40).jpg); opacity: 0.7;" animation="property: rotation; to: -360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box41" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (41).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 -360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+<a-entity id="box42" randomize="position:20 3 20..-20 3 -20" scale="1 1 1" rotation="0 0 0"   geometry="" material="src:url(images/c (42).jpg); opacity: 0.7;" animation="property: rotation; to: 360 -360 360; loop: true; easing: linear; dur: 10000"> 
+</a-entity>
+
+
+<!-- Object -->
+
+<a-cylinder material="src:images/casanova (7).jpg; side: double; repeat:50 1;" open-ended="true" scale="50 15 50" opacity="1.0;" position="0 60 8" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 40000"></a-cylinder>
+
+<a-cylinder material="src:images/filmstrip.jpg; side: double; repeat:10 1;" open-ended="true" scale="50 15 50" opacity="1.0;" position="0 75 8" rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 30000"></a-cylinder>
+
+<a-cylinder material="src:images/maddalena.jpg; side: double; repeat:50 1;" open-ended="true" scale="50 15 50" opacity="1.0;" position="0 90 8" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000"></a-cylinder>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000">
+<a-icosahedron color="red" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-2 8 2" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-sphere>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000">
+<a-icosahedron color="red" src="images/casanova (1).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-2 8 2" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000">
+<a-icosahedron color="green" src="images/casanova (2).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-4 10 4" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 30000">
+<a-icosahedron color="yellow" src="images/casanova (1).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-6 12 6" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 10000">
+<a-icosahedron color="blu" src="images/casanova (2).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-8 8 8" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 20000">
+<a-icosahedron color="pink" src="images/casanova (1).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-10 10 10" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 30000">
+<a-icosahedron color="orange" src="images/casanova (2).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-12 12 12" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+<a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 40000">
+<a-icosahedron color="cyan" src="images/casanova (1).jpg" material="transparent: true; opacity: 0.9;" scale="1 1 1" position="-3 14 3" rotation="0 0 0" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000"></a-icosahedron>
+</a-entity>
+
+
+<!-- Floor -->
+
+<a-plane static-body id="floor" material="src:url(images/moss.jpg); repeat:100 100;" width="1000" height="1000" rotation="-90 0 0" position="0 2 0"></a-plane>
+<a-box color="black" scale="200 20 200" position="0 -12 0" audio="src: #music; loop: true;"></a-box>
+
+
+</a-scene>
+             
+
+  </body>
+</html>
