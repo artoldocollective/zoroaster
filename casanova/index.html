@@ -38,6 +38,15 @@
         height:100px;
       }
 
+      img {
+      -webkit-user-drag: none;
+      user-drag: none;         
+      -webkit-user-select: none;
+      -moz-user-select: none;    
+      -ms-user-select: none;    
+      user-select: none;        
+      }
+
       #center {
 	bottom: 0px;
         position: absolute;
@@ -154,6 +163,12 @@
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
 	});
+</script>
+
+<script>
+document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+});
 </script>
 
 <body bg-color="black">
